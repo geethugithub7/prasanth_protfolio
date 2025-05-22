@@ -1,0 +1,238 @@
+
+    :root {
+      --primary-color: #000000;
+      --secondary-color: #000000;
+      --bg-color: #F5F5F5;
+      --text-dark: #222;
+      --text-light: #fff;
+      --accent: #FFD460;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-dark);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: var(--text-light);
+      padding: 100px 20px 60px;
+      text-align: center;
+      gap: 0.3rem;
+      animation: fadeSlide 1.5s ease-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem; /* Controls spacing between h1 and p */
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin-bottom: 0.25rem; /* Reduced from 0.5rem */
+      line-height: 1.2; /* Ensures tight spacing */
+    }
+    
+    header p {
+      font-size: 1.5em;
+      color: var(--accent);
+      margin-top: 0; /* Already correct */
+      line-height: 1.3;
+    }
+
+    nav {
+      background: var(--secondary-color);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: var(--primary-color);
+      text-decoration: none;
+
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeSlideUp 1s ease;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+    .reach{
+      background-color: #FFD460;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+  
+      .project:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      }
+  
+      .project img {
+        width: 100%;
+        height: auto;
+      }
+  
+      .project-content {
+        padding: 20px;
+      }
+  
+      .project-content h3 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
+
+    
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+  
+      .skills span {
+        background: var(--accent);
+        color: var(--primary-color);
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: transform 0.2s;
+      }
+  
+      .skills span:hover {
+        transform: scale(1.05);
+      }
+  
+      footer {
+        background: var(--primary-color);
+        color: var(--text-light);
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      a {
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+  
+      a:hover {
+        text-decoration: underline;
+      }
+  
+      @keyframes fadeSlide {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+  
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: var(--accent); }
+  }
+
+  .animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--accent);
+    font-weight: bold;
+    animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeInText 2s ease-in 2s forwards;
+  }
+  
+  @keyframes fadeInText {
+    to { opacity: 1; }
+  }
+  
+  
+      @media (max-width: 992px) {
+        header h1 {
+          font-size: 3em;
+        }
+  
+        nav {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        header h1 {
+            
+        font-size: 2.5em;
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2em;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    .skills span {
+      padding: 8px 16px;
+      font-size: 0.9em;
+    }
+  }
+    
